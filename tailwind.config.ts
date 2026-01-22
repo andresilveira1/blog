@@ -63,6 +63,9 @@ module.exports = {
         "body-sm": ["14px", { lineHeight: "150%", fontWeight: "400" }],
         "body-md": ["16px", { lineHeight: "150%", fontWeight: "400" }],
 
+        // Body - Tag
+        "body-tag": ["12px", { lineHeight: "100%", fontWeight: "400" }],
+
         // Action - Inter
         "action-sm": ["14px", { lineHeight: "normal", fontWeight: "500" }],
         "action-md": ["16px", { lineHeight: "normal", fontWeight: "500" }],
