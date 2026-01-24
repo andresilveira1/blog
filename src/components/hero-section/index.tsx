@@ -1,14 +1,21 @@
-import { ArrowRight, Clock, Store } from "lucide-react";
-import { Button } from "../ui/button";
+import { Clock, Store } from "lucide-react";
 import Image from "next/image";
-import Link from "next/link";
+import { ButtonNewStore } from "../button-new-store";
+import { PT_Sans_Caption } from "next/font/google";
+
+const ptSansCaption = PT_Sans_Caption({
+  subsets: ["latin"],
+  weight: "700",
+});
 
 export const HeroSection = () => {
   return (
     <section className="container relative flex items-center justify-center mt-20">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 min-h-[20rem] md:h-[36rem] items-center">
         <div className="flex flex-col items-center justify-center gap-4 md:items-start">
-          <h1 className="text-gray-100 text-heading-hg">
+          <h1
+            className={`${ptSansCaption.className} text-gray-100 text-heading-hg text-center`}
+          >
             Venda seus produtos como afiliado em um único lugar
           </h1>
 
@@ -29,11 +36,7 @@ export const HeroSection = () => {
           </div>
 
           <div className="text-white flex flex-col gap-4 mt-5 items-center mb:items-start lg:items-start">
-            <Button className="rounded-full w-fit" asChild>
-              <Link href="/criar-loja">
-                Criar loja grátis <ArrowRight />
-              </Link>
-            </Button>
+            <ButtonNewStore />
 
             <span className="text-gray-300 text-body-xs">
               Não precisa de cartão de crédito
