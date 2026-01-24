@@ -1,49 +1,39 @@
-import Link from "next/link";
-import { Button } from "../ui/button";
-import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { ButtonNewStore } from "../button-new-store";
+import { Card } from "../card";
+import { FeatureMessage } from "./feature-message";
+import { Tag } from "./tag";
 
 export const FeatureSection = () => {
   return (
     <section className="container bg-gray-700 flex flex-col gap-3 md:grid md:grid-cols-2 md:gap-6 pb-8 pt-8 md:py-10">
       <div className="flex flex-col gap-3 md:flex-row md:gap-6 md:col-span-2">
-        <div className="flex flex-col gap-2 rounded-lg bg-gray-500 p-6 md:p-12">
-          <span className="text-body-tag text-blue-200 bg-blue-400 px-2 py-1 rounded-sm w-fit uppercase">
-            Simples
-          </span>
+        <Card className="bg-gray-500">
+          <Tag>Simples</Tag>
 
-          <h2 className="text-gray-100 text-heading-lg">
+          <FeatureMessage>
             Crie um catálogo de produtos online em poucos minutos
-          </h2>
-        </div>
+          </FeatureMessage>
+        </Card>
 
-        <div className="flex flex-col gap-2 rounded-lg bg-gray-500 p-6 md:p-12">
-          <span className="text-body-tag text-blue-200 bg-blue-400 px-2 py-1 rounded-sm w-fit uppercase">
-            Prático
-          </span>
+        <Card className="bg-gray-500">
+          <Tag>Prático</Tag>
 
-          <h2 className="text-gray-100 text-heading-lg">
+          <FeatureMessage>
             Venda para seu público através de uma plataforma única
-          </h2>
-        </div>
+          </FeatureMessage>
+        </Card>
       </div>
 
       <div className="col-span-2 grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-4 rounded-lg bg-gray-500 p-6 md:p-12">
         <div className="flex flex-col gap-4 md:gap-3 max-w-[342px]">
-          <span className="text-body-tag text-blue-200 bg-blue-400 px-2 py-1 rounded-sm w-fit uppercase">
-            Personalizável
-          </span>
-          <h2 className="text-gray-100 text-heading-lg">
+          <Tag>Personalizável</Tag>
+
+          <FeatureMessage>
             Tenha uma loja online personalizada com a cara da sua marca
-          </h2>
-          <Button
-            asChild
-            className="rounded-full hidden mt-4 md:mt-auto md:flex w-fit"
-          >
-            <Link href="/criar-loja">
-              Criar loja grátis <ArrowRight />
-            </Link>
-          </Button>
+          </FeatureMessage>
+
+          <ButtonNewStore className="hidden mt-4 w-fit md:mt-auto md:flex" />
         </div>
 
         <div className="flex flex-col items-center justify-center w-full">
@@ -57,14 +47,7 @@ export const FeatureSection = () => {
             />
           </div>
 
-          <Button
-            asChild
-            className="rounded-full w-full mt-4 md:mt-auto md:hidden"
-          >
-            <Link href="/criar-loja">
-              Criar loja grátis <ArrowRight />
-            </Link>
-          </Button>
+          <ButtonNewStore className="w-full mt-4 md:hidden" />
         </div>
       </div>
     </section>
