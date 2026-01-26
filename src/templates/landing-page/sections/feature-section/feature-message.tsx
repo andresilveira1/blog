@@ -12,7 +12,9 @@ const ptSansCaption = PT_Sans_Caption({
 
 export const FeatureMessage = ({ children }: FeatureProps) => {
   return (
-    <h2 className={`${ptSansCaption.className} text-gray-100 text-heading-lg`}>
+    <h2
+      className={`${ptSansCaption.className} text-gray-100 text-heading-sm md:text-heading-lg`}
+    >
       {children}
     </h2>
   );

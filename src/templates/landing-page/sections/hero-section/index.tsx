@@ -1,35 +1,27 @@
 import { Clock, Store } from "lucide-react";
 import Image from "next/image";
-import { ButtonNewStore } from "../button-new-store";
-import { PT_Sans_Caption } from "next/font/google";
-
-const ptSansCaption = PT_Sans_Caption({
-  subsets: ["latin"],
-  weight: "700",
-});
+import { ButtonNewStore } from "../../../../components/button-new-store";
 
 export const HeroSection = () => {
   return (
-    <section className="container relative flex items-center justify-center mt-20">
+    <section className="container relative flex items-center justify-center mt-20 pb-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 min-h-[20rem] md:h-[36rem] items-center">
         <div className="flex flex-col items-center justify-center gap-4 md:items-start">
-          <h1
-            className={`${ptSansCaption.className} text-gray-100 text-heading-hg text-center`}
-          >
+          <h1 className="font-sans text-gray-100 text-heading-lg md:text-heading-hg text-center md:text-start ">
             Venda seus produtos como afiliado em um único lugar
           </h1>
 
           <div className="flex flex-col justify-center gap-2">
             <p className="flex items-center gap-2">
               <Clock className="text-cyan-100 h-4 w-4" />
-              <span className="text-gray-200">
+              <span className="text-gray-200 text-body-sm md:text-body-md">
                 Crie o seu site em menos de 5 minutos
               </span>
             </p>
 
             <p className="flex items-center gap-2">
               <Store className="text-cyan-100 h-4 w-4" />
-              <span className="text-gray-200">
+              <span className="text-gray-200 text-body-sm md:text-body-md">
                 Acompanhe e otimize seu negócio online
               </span>
             </p>

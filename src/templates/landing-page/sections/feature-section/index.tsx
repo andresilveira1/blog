@@ -1,12 +1,12 @@
 import Image from "next/image";
-import { ButtonNewStore } from "../button-new-store";
-import { Card } from "../card";
+import { ButtonNewStore } from "../../../../components/button-new-store";
+import { Card } from "../../../../components/card";
 import { FeatureMessage } from "./feature-message";
 import { Tag } from "./tag";
 
 export const FeatureSection = () => {
   return (
-    <section className="container bg-gray-700 flex flex-col gap-3 md:grid md:grid-cols-2 md:gap-6 pb-8 pt-8 md:py-10">
+    <section className="container bg-gray-700 flex flex-col gap-3 md:grid md:grid-cols-2 md:gap-6 pb-[72px] pt-10 md:py-10">
       <div className="flex flex-col gap-3 md:flex-row md:gap-6 md:col-span-2">
         <Card className="bg-gray-500">
           <Tag>Simples</Tag>
