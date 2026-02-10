@@ -1,3 +1,4 @@
+import { Avatar } from "@/components/avatar";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -25,7 +26,7 @@ export const PostCard = ({
 }: PostCardProps) => {
 	return (
 		<Link
-			href={`/blog${slug}}`}
+			href={`/blog/${slug}`}
 			className="w-full max-w-2xl rounded-xl border border-gray-400 bg-gray-600 overflow-hidden transition-all duration-300 hover:border-blue-300"
 		>
 			<div className="p-2 rounded-md overflow-hidden">
@@ -53,16 +54,14 @@ export const PostCard = ({
 					</p>
 
 					<div className="flex items-center gap-2 border-t border-gray-400 py-4">
-						<div className="relative h-5 w-5 md:h-6 md:w-6 overflow-hidden rounded-full border border-blue-200x">
-							<Image
+						<Avatar.Container>
+							<Avatar.Image
 								src={author.avatar}
 								alt={`Imagem de ${author.name}`}
-								fill
-								className="object-cover rounded-mb"
 							/>
-						</div>
 
-						<span className="text-body-sm text-gray-300">{author.name}</span>
+							<Avatar.Title>{author.name}</Avatar.Title>
+						</Avatar.Container>
 					</div>
 				</div>
 			</div>
