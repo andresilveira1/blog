@@ -40,7 +40,7 @@ export function PostPage() {
 	});
 
 	return (
-		<main className="py-[138px] text-gray-100">
+		<main className="py-28 md:py-[138px] text-gray-100">
 			<div className="container space-y-12 px-4 md:px-8">
 				<Breadcrumb>
 					<BreadcrumbList className="text-action-sm">
@@ -100,20 +100,22 @@ export function PostPage() {
 
 					<aside className="space-y-6">
 						<div className="md:px-6">
-							<h2 className={`${ptSansCaption.className} text-heading-xs mb-5`}>
+							<h2
+								className={`${ptSansCaption.className} hidden md:block text-heading-xs mb-5`}
+							>
 								Compartilhar
 							</h2>
 
-							<div className="space-y-3">
+							<div className="flex justify-between md:flex-col gap-2">
 								{shareButtons.map((provider) => (
 									<Button
 										variant="outline"
 										onClick={() => provider.action()}
 										key={provider.provider}
-										className="w-full justify-start gap-2 [&_svg]:size-4"
+										className="w-fit md:w-full justify-start gap-2 [&_svg]:size-4"
 									>
 										{provider.icon}
-										{provider.name}
+										<span className="hidden md:block">{provider.name}</span>
 									</Button>
 								))}
 							</div>
