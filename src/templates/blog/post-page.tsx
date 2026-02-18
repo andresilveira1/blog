@@ -1,9 +1,7 @@
-/** biome-ignore-all assist/source/organizeImports: <explanation> */
-import { PT_Sans_Caption } from "next/font/google";
-import { allPosts } from "contentlayer/generated";
+// biome-ignore assist/source/organizeImports: <explanation>
 import Image from "next/image";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import type { Post } from "contentlayer/generated";
 
 import {
 	Breadcrumb,
@@ -18,20 +16,13 @@ import { Markdown } from "@/components/markdown";
 import { Button } from "@/components/ui/button";
 import { useShare } from "@/hooks";
 
-const ptSansCaption = PT_Sans_Caption({
-	subsets: ["latin"],
-	weight: "700",
-});
+export interface PostPageProps {
+	post: Post;
+}
 
-export function PostPage() {
-	const router = useRouter();
-	const slug = router.query.slug as string;
-	const post = allPosts.find(
-		(post) => post.slug.toLowerCase() === slug.toLowerCase(),
-	)!;
-
+export function PostPage({ post }: PostPageProps) {
 	const publishedDate = new Date(post?.date).toLocaleDateString("pt-BR");
-	const postUrl = `https://site.set/blog/${slug}`;
+	const postUrl = `https://site.set/blog/${post.slug}`;
 
 	const { shareButtons } = useShare({
 		url: postUrl,
@@ -100,9 +91,7 @@ export function PostPage() {
 
 					<aside className="space-y-6">
 						<div className="md:px-6">
-							<h2
-								className={`${ptSansCaption.className} hidden md:block text-heading-xs mb-5`}
-							>
+							<h2 className="font-sans hidden md:block text-heading-xs mb-5">
 								Compartilhar
 							</h2>
 
