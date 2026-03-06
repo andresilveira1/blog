@@ -15,7 +15,7 @@ interface UseShareProps extends ShareConfig {
 export const useShare = ({
 	url,
 	title,
-	text,
+	description,
 	clipboardTimeOut = 2000,
 }: UseShareProps) => {
 	const { isCopied, handleCopy } = useClipboard({ timeout: clipboardTimeOut });
@@ -24,9 +24,9 @@ export const useShare = ({
 		() => ({
 			url,
 			...(title && { title }),
-			...(text && { text }),
+			...(description && { description }),
 		}),
-		[text, title, url],
+		[description, title, url],
 	);
 
 	const share = useCallback(

@@ -3,7 +3,7 @@ import { AtSign, Facebook, Linkedin, Slack } from "lucide-react";
 export interface ShareConfig {
 	url: string;
 	title?: string;
-	text?: string;
+	description?: string;
 }
 
 export type SocialProvider = "linkedin" | "facebook" | "slack" | "clipboard";
